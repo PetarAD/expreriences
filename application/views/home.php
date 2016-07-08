@@ -1,4 +1,8 @@
-
+<?php if (isset($_SESSION['username'])): ?>
+    <p>
+        <?= 'Здравей,'.$_SESSION['username'] ?>
+    </p>
+<?php endif; ?>
     <div class="container">
       <main>
       <div class="home-content">
@@ -6,7 +10,7 @@
         „Споделям враца” е сайт създаден с идеята да свърже хората от враца. Споделяйки моменти и спомени ние сближаваме хората. освен забавлението ние развиваме и кулртурата спорта, юдравето и науката. казузата ни е разнообрази сивия град и да свържем усмивките на хората.
       </section>
       <section class="form-container">
-        <form class="login" action="login.php" method="POST">
+        <form class="login" action="<?= base_url('/auth/login') ?>" method="POST">
 
           <fieldset>
             <label for="username">Потребителско име</label>
